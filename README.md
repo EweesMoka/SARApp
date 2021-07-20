@@ -18,3 +18,7 @@
 2. 在切换皮肤风格时，自定义滑块会发送变化，虽然开关状态没有变。
 3. 具体BUG复现见/video/bug1.mp4和bug2.mp4
 
+## 2021720
+解决bug1：        if(this->udpSocket->hasPendingDatagrams())
+
+
