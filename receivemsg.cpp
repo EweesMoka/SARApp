@@ -115,7 +115,8 @@ void ReceiveMsg::isReceiveOrNot()
         return;
     }else{
         this->udpSocket->blockSignals(false);
-        emit this->udpSocket->readyRead();//这里应该加一个判定，当有数据发过来的时候才发送信号。
+        if(this->udpSocket->hasPendingDatagrams())
+            emit this->udpSocket->readyRead();//这里应该加一个判定，当有数据发过来的时候才发送信号。
         return;
     }
 }
